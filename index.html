@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditi Deodhar</title>
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<!-- NAV BAR SECTION -->
+    <header id="home" class="section" style="padding-top: 0px;">
+        <nav style="background: #131c2c;">
+            <div class="container">
+                <a href="#home" class="brand-name" style="color: #f3f4f6;">Aditi Deodhar</a>
+                <button id="menu-toggle" class="menu-toggle">
+                    <i class="fas fa-bars"></i> 
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-button">Home</a></li>
+                    <li><a href="#projects" class="nav-button">Projects</a></li>
+                    <li><a href="#experience" class="nav-button">Experience</a></li>
+                    <li><a href="#skills" class="nav-button">Skills</a></li>                                        
+                    <li><a href="assets/AditiDeodhar_Resume.pdf" class="nav-button" target="_blank" download>Resume</a></li>
+                    <li><a href="#contact-details" class="nav-button">Contact Me</a></li>
+                </ul>  
+                <button id="theme-button" class="theme-button" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+
+<!-- HOME SECTION -->
+        <div class="about-container">
+            <div class="about-content">
+                <!-- Profile + Social -->
+                <div class="about-image">
+                    <img src="assets/Aditi.jpg" alt="Aditi Deodhar Profile Picture" class="profile-pic">
+                </div>
+                <div class="bio-links-container">
+                    <h1>Aditi Deodhar</h1>
+                    <p class="subtitle">
+                        <span id="typewriter-text"></span>
+                    </p>
+                    <p><a href="https://www.northeastern.edu/" class="university-link">Northeastern University</a></p>
+                </div>                    
+                <div class="social-icons">
+                    <a href="mailto:deodhar.ad@northeastern.edu"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/aditi-deodhar-0907/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/deodharaditi"><i class="fab fa-github"></i></a>
+                    <a href="https://scholar.google.com/citations?user=A9uB644AAAAJ&hl=en"><i class="ai ai-google-scholar"></i></a>
+                    <a href="https://www.youtube.com/@AditiDeodhar09"><i class="fa fa-youtube-play"></i></a>
+                </div>
+                <!-- About me -->
+                <h2> Hello world, I’m Aditi!</h2>
+                <p>I’m all about using tech to solve real-world problems and make life a little better for everyone. I love turning ideas into something meaningful. When I’m not coding or experimenting with new tools, you’ll find me mentoring, learning, or geeking out about the latest in AI and software. Check out my <a href="https://aditideodhar.medium.com/" style="color:#2563eb;">tech blog</a>.</p>
+                <div class="details-section">
+                    <div class="details-subsection">
+                        <h3>Interests</h3>
+                        <ul>
+                            <li>Data Analysis and Machine Learning</li>
+                            <li>Cloud Computing and Scalability</li>
+                            <li>Generative AI and Ethical AI Development</li>
+                        </ul>
+                    </div>
+                    <div class="details-subsection">
+                        <h3>Education</h3>
+                        <ul class="fa-ul education-list">
+                            <li><i class="fa-li fas fa-graduation-cap theme-icon"></i> <strong>Master of Science - Information Systems</strong> (Expected Dec 2025)<br>Northeastern University</li>
+                            <li><i class="fa-li fas fa-graduation-cap theme-icon"></i> <strong>Bachelor of Engineering - Electronics and Telecommunication</strong> (Jul 2021)<br>Savitribai Phule Pune University</li>
+                        </ul>
+                    </div>                                        
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- PROJECTS SECTION -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <a href="https://github.com/deodharaditi/Context-Based-Email-Ranking-System-For-Enterprise" target="_blank" class="project-card" style="background-image: url('assets/email.png');">
+                <h3>Context-based Email Ranking System for Enterprise</h3>
+                <p>An email recommendation system for enterprise communication based on context which includes email content and social structure of communication.</p>
+            </a>
+            <a href="https://github.com/deodharaditi/Context-Based-Email-Ranking-System-For-Enterprise" target="_blank" class="project-card" style="background-image: url('assets/ems.png');">
+                <h3>RapidResQ</h3>
+                <p>A comprehensive healthcare management solution designed to streamline emergency medical services (EMS) by optimizing response times, improving operational efficiency, and enhancing patient care.</p>
+            </a>
+            <a href="https://github.com/deodharaditi/Optimising-Urban-Sustainability-A-Data-Driven-Analysis-of-Boston-s-Utility-Consumption" target="_blank" class="project-card" style="background-image: url('assets/energy.png');">
+                <h3>A Data-driven Analysis of Boston's Utility Consumption </h3>
+                <p>An extensive analysis to evaluate Boston's utility consumption patterns, leveraging data-driven methodologies for actionable insights.</p>
+            </a>
+            <a href="https://github.com/deodharaditi/ApartmentFinder" target="_blank" class="project-card" style="background-image: url('assets/apartment.png');">
+                <h3>Apartment Finder</h3>
+                <p>A centralized platform designed to streamline the real estate market for buyers, sellers, and brokers with features such as comprehensive listing management, and advanced search and filter options, detailed property information, and user reviews.</p>
+            </a>
+            <a href="https://github.com/deodharaditi/MediPedia-Your-Go-To-Resource-For-Medical-Knowledge-And-Assistance" target="_blank" class="project-card" style="background-image: url('assets/chatbot.png');">
+                <h3>MediPedia</h3>
+                <p>A versatile medical chatbot, serving as a user-friendly gateway to comprehensive medical information, offering interactive dialogue for seamless assistance and guidance.</p>
+            </a>
+            <a href="https://github.com/deodharaditi/StockWhisperer" target="_blank" class="project-card" style="background-image: url('assets/stock.png');">
+                <h3>Stock Whisperer</h3>
+                <p>A deep learning-based stock market prediction tool that utilizes fundamental financial data to forecast stock prices for the next quarter.</p>
+            </a>
+        </div>
+    </section>
+
+<!-- EXPERIENCE SECTION -->
+    <section id="experience" class="section">
+        <h2>Experience</h2>
+        <div class="experience-container">
+            <!-- Experience 1 -->
+            <div class="experience-card">
+                <h3>Jutly Inc</h3>
+                <p><strong>AI Engineer Co-Op</strong> (Sep 2024 - Dec 2024)</p>
+                <ul>
+                    <li>Evaluated new AI technologies such as LangGraph, and LangChain to identify possible integration with existing product</li>
+                    <li>Developed and implemented prototypes utilizing LangChain leading to a 20% increase in efficiency</li>
+                    <li>Designed and implemented multi-agent workflows using LangGraph, Flowise, and LangChain, achieving seamless integration with PHP-based systems and improving simulation adaptability by 25%.</li> 
+                    <li>Streamlined development environment by Dockerizing the application setup, reducing onboarding time by 30% and ensuring consistency across teams.</li>
+                </ul>
+            </div>
+            <!-- Experience 2 -->
+            <div class="experience-card">
+                <h3>Persistent Systems Ltd.</h3>
+                <p><strong>Software Engineer</strong> (Aug 2021 - Jul 2023)</p>
+                <ul>
+                    <li>Implemented password encryption in a client application's database and property files, reducing the risk of data breaches by 50%, achieving industry-standard security compliance.</li>
+                    <li>Researched and developed solutions to enhance the application's compatibility with the latest Java versions, resulting in successful deployment on both Java 15 and Java 17 platforms, ensuring seamless operation across multiple Java environments.</li>
+                    <li>Elevated the standard command line installer of the application to an intuitive InstallShield GUI installer, thereby enhancing the user experience and reduced installation time.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+<!-- SKILLS SECTION -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-card">
+            <!-- Programming Languages -->
+            <div class="skills-row">
+                <h3>Languages</h3>
+                <div class="skills-icons">
+                    <img src="assets/C.png" alt="C" title="C" />
+                    <img src="assets/CPP.png" alt="C++" title="C++" />
+                    <img src="assets/python.png" alt="Python" title="Python" />
+                    <img src="assets/java.png" alt="Java" title="Java" />
+                    <img src="assets/R.png" alt="R" title="R" />
+                    <img src="assets/bash.png" alt="Bash" title="Bash" />
+                </div>
+            </div> 
+            <!-- Web Development -->
+            <div class="skills-row">
+                <h3>Web Development</h3>
+                <div class="skills-icons">
+                    <img src="assets/html.png" alt="HTML" title="HTML" />
+                    <img src="assets/css.png" alt="CSS" title="CSS" />
+                    <img src="assets/bootstrap.png" alt="Bootstrap" title="Bootstrap" />
+                    <img src="assets/react.png" alt="React" title="React" />
+                    <img src="assets/js.png" alt="JS" title="JS" />
+                </div>
+            </div> 
+            <!-- Cloud and Database -->
+            <div class="skills-row">
+                <h3>Cloud and Database</h3>
+                <div class="skills-icons">
+                    <img src="assets/aws.png" alt="AWS" title="AWS" />
+                    <img src="assets/mysql.png" alt="MySQL" title="MySQL" />
+                    <img src="assets/mongodb.png" alt="MongoDB" title="MongoDB" />
+                </div>
+            </div>  
+            <!-- Frameworks -->
+            <div class="skills-row">
+                <h3>Frameworks</h3>
+                <div class="skills-icons">
+                    <img src="assets/spring.png" alt="SpringBoot" title="SpringBoot" />
+                    <img src="assets/django.png" alt="Django" title="Django" />
+                    <img src="assets/flask.png" alt="Flask" title="Flask" />
+                </div>
+            </div>
+            <!-- Data Science -->
+            <div class="skills-row">
+                <h3>Data Science</h3>
+                <div class="skills-icons">
+                    <img src="assets/tensorflow.png" alt="TensorFlow" title="TensorFlow" />
+                    <img src="assets/numpy.png" alt="Numpy" title="Numpy" />
+                    <img src="assets/pandas.png" alt="Pandas" title="Pandas" />
+                    <img src="assets/spark.png" alt="Spark" title="Spark" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- CONTACT SECTION -->
+    <section id="contact-details" class="contact-footer">
+        <div class="contact-details">
+            <h3>Contact Me</h3>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:deodhar.ad@northeastern.edu">deodhar.ad@northeastern.edu</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Boston, MA</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/aditi-deodhar-0907/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

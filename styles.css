@@ -1,0 +1,1019 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
+/* Light Theme Variables */
+body {
+    --card-bg: #f0f9ff; /* Light cyan */
+    --card-border: #c7e9ff; /* Sky blue */
+    --card-hover-bg: #ecfeff; /* Bright blue tint */
+    --primary-color: #0ea5e9; /* Vivid blue */
+    --text-color: #334155; /* Dark gray-blue */
+}
+
+/* Dark Theme Variables */
+body.dark-mode {
+    --card-bg: #1e293b; /* Deep blue-gray */
+    --card-border: #475569; /* Muted blue-gray */
+    --card-hover-bg: #2c3e50; /* Dark teal */
+    --primary-color: #3b82f6; /* Bright blue */
+    --text-color: #e2e8f0; /* Soft white */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', serif;
+    background: #ffffff; /* Updated to a lighter color for the light theme */
+    color: #090b0f;
+    scroll-behavior: smooth;
+}
+
+/* Full Page Container */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body fills the viewport height */
+}
+    
+body.dark-mode {
+    background: #0e1115;
+    color: #f3f4f6;
+}
+
+.brand-name {
+    font-weight: bold;
+    color: #0e1115;
+    text-decoration: none;
+}
+
+/* Dark Mode */
+html.dark-mode {
+    --background-color: #0e1115; /* Background for dark theme */
+    --text-color: #f3f4f6; /* Text color for dark theme */
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+
+
+/* Make the last section fill the remaining space */
+section:last-of-type {
+    flex-grow: 1; /* Fill the remaining space */
+    display: flex;
+    flex-direction: column;
+    background: var(--section-bg, #f9fafb);
+}
+
+
+header {
+    height: 150vh;
+    background: #f3f4f6; /* Assign current light theme color for home section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #0e1115; /* Use dark theme color for font in home section */
+}
+
+body.dark-mode header {
+    background: #0c0f14;
+    color: #f3f4f6;
+}
+
+body.dark-mode nav {
+    background: rgba(15, 23, 42, 0.95);
+}
+
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 20px;
+    background: #131c2c;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .brand-name {
+    font-weight: bold;
+    color: #f3f4f6;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+/* Navigation Links - Default for Desktop */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f9fafb;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+/* Hamburger Menu Button - Hidden on Desktop */
+#menu-toggle {
+    display: none; /* Only show hamburger on mobile */
+    font-size: 1.5rem;
+    color: #f3f4f6;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    /* Show Hamburger Menu Button */
+    #menu-toggle {
+        display: block;
+    }
+
+    /* Hide Navigation Links by Default */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px; /* Position below the navbar */
+        right: 20px;
+        flex-direction: column;
+        background: #090b0f;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+
+    /* Show Links When Visible Class is Added */
+    .nav-links.visible {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        text-align: left;
+    }
+}
+
+
+
+/* Theme Button */
+.theme-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.theme-button:hover {
+    color: var(--primary-color);
+}
+
+
+/* Brand Name */
+.brand-name {
+    font-weight: bold;
+    font-family: 'Roboto', serif;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+body.dark-mode .brand-name {
+    color: #f3f4f6; /* Ensure brand name is visible in dark mode */
+}
+
+.hero {
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(243, 244, 246, 0.8); /* Updated to lighter color for consistency */
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: var(--primary-color);
+}
+
+body.dark-mode .button {
+    background: var(--primary-color);
+}
+
+/* Section */
+section {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    scroll-margin: 100px;
+    background: #f9fafb;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 40px auto;
+}
+
+body.dark-mode section {
+    background: #0c0f14;
+    color: #f3f4f6;
+}
+
+section h2 {
+    color: var(--primary-color);
+}
+
+body.dark-mode section h2 {
+    color: var(--primary-color);
+}
+
+
+/* Project Card */
+
+
+/* Projects Container */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Individual Project Card */
+.project-card {
+    position: relative; /* Enable pseudo-element positioning */
+    background: var(--card-bg); /* Theme-aware background color */
+    background-blend-mode: overlay; /* Blend the background color and image */
+    border: 1px solid var(--card-border); /* Theme-aware border */
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure content doesn't overflow the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Semi-Transparent Background Image */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover; /* Ensure the image covers the overlay */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: var(--card-bg-image); /* Theme-aware background image */
+    opacity: 0.25; /* Semi-transparency for the image */
+    z-index: 0; /* Place the image behind the card content */
+    border-radius: 8px; /* Match card border radius */
+}
+
+.project-details {
+    list-style-type: disc; /* Remove bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0.8em; /* Remove default padding */
+    font-size: 0.95em; /* Slightly smaller font size */
+    line-height: 1.5; /* Improve readability */
+}
+.project-details li {
+    margin-bottom: 0.5rem; /* Add spacing between list items */
+}
+
+/* Hover Effect */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background: var(--card-hover-bg); /* Theme-aware hover background */
+}
+
+/* Project Title */
+.project-card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: var(--primary-color); /* Theme-aware text color */
+}
+
+/* Project Description */
+.project-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--text-color); /* Theme-aware text color */
+}
+
+
+/* Ensure links within the card don't change color or show an underline */
+.project-card:link,
+.project-card:visited {
+    text-decoration: none; /* Remove underline for default and visited links */
+    color: inherit; /* Keep text color consistent */
+}
+
+.project-card:hover,
+.project-card:active {
+    text-decoration: none; /* Ensure underline doesn't appear on hover or active state */
+    color: inherit; /* Maintain consistent text color */
+}
+
+/*                       Project Card End                         */
+
+.card {
+    background: #1f2937;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-image {
+    width: 180px;          /* Adjusted size for the image container */
+    height: 180px;         /* Height same as width */
+    margin: 0 auto;        /* Center align the image container */
+    position: relative;    /* Relative positioning for layering */
+    z-index: 1;            /* Lower z-index so it goes behind the navbar */
+}
+
+.profile-pic {
+    width: 110%;           /* Slight zoom effect */
+    height: 110%;          /* Height matching width for proportion */
+    border-radius: 50%;    /* Circular shape */
+    object-fit: cover;     /* Cover the container properly */
+    transform: scale(1.1); /* Zoom in slightly */
+    position: relative;    /* Relative positioning for adjustment */
+    left: -5%;             /* Re-center after zoom */
+    top: -5%;              /* Re-center after zoom */
+}
+
+.about-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Adjust the Bio Section */
+.bio-links-container {
+    margin-top: 30px;  /* Add space above the name to shift it down */
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;  /* Reduce gap between name, role, and university */
+    text-align: center;
+}
+
+.bio-links-container h1 {
+    margin: 0;  /* Remove any default margin for more precise control */
+}
+
+.bio-links-container .subtitle {
+    margin: 0;  /* Remove extra spacing */
+    font-weight: normal;  /* Keep it visually distinct from the name */
+}
+
+.bio-links-container a.university-link {
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;     /* Bold the university name */
+    color: inherit;        /* Ensure the text color is consistent */
+    
+}
+
+.bio-links-container a.university-link:hover {
+    text-decoration: none; /* Ensure underline doesn’t reappear on hover */
+}
+
+
+/* Social Icon Change */
+
+/* Social Icon Styles */
+.social-icons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.5rem;         /* Increase the gap slightly for better spacing */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.social-icons a {
+    font-size: 2em;      /* Increase the size of the icons */
+    transition: color 0.3s ease;  /* Smooth color transition */
+}
+
+/* Default (Light Mode) */
+.social-icons a {
+    color: #0ea5e9;      /* Default color for the icons in light mode */
+}
+
+.social-icons a:hover {
+    color: #3b82f6;      /* Light theme hover color (slightly orange) */
+}
+
+/* Dark Mode */
+body.dark-mode .social-icons a {
+    color: #3b82f6;      /* Default color for the icons in dark mode */
+}
+
+body.dark-mode .social-icons a:hover {
+    color: #0ea5e9;      /* Dark theme hover color (light green) */
+}
+
+.social-icons a img {
+    width: 32px;  /* Set size for SVG Google Scholar icon */
+    height: 32px;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth scaling and color transition */
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+body.dark-mode .social-icons a img {
+    filter: brightness(1.5); /* Adjust brightness in dark mode */
+}
+
+
+.details-section ul {
+    list-style-type: disc;
+    margin-top: 0.5rem; /* Add spacing above the list */
+    margin-bottom: 0.5rem; /* Add spacing below the list */
+    padding-left: 1rem; /* Indent the list */
+}
+
+.details-section ul li {
+    margin-bottom: 0.3rem; /* Add spacing between list items */
+    line-height: 1.5; /* Increase line height for readability */
+}
+
+.details-section {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.details-subsection {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* <style> */
+.about-container {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    position: relative; /* Prevent layout shifts */
+}
+
+.details-section {
+    display: flex;
+    gap: 0.1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.details-subsection {
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+}
+/* </style> */
+.education-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding-left: 0;       /* Align the list to the left */
+}
+
+.scholar-icon {
+    margin-right: 10px;    /* Add some spacing between the icon and the text */
+    font-size: 1.2em;      /* Adjust the icon size if necessary */
+    color: #2563eb;        /* Set a color to match your theme */
+}
+
+.fa-ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding-left: 0;       /* Align the list to the left */
+    margin: 0;             /* Remove default margin */
+}
+
+.fa-li {
+    margin-right: 10px;   /* Adjust spacing between the icon and text */
+    color: #2563eb;       /* Match the icon color with your theme (adjust if needed) */
+}
+
+.education-list {
+    margin-bottom: 20px;  /* Add some space below the list */
+}
+
+/* Default (Light Mode) */
+.theme-icon {
+    color: #0ea5e9;  /* Set the color for the graduation cap in light mode */
+}
+
+/* Dark Mode */
+body.dark-mode .theme-icon {
+    color: #3b82f6;  /* Set the color for the graduation cap in dark mode */
+}
+
+
+
+
+.animated-text {
+    position: relative;
+    height: 1.5em; /* Adjust according to your design */
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.animated-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: slide-up 4s linear infinite;
+    text-align: center;
+}
+
+@keyframes slide-up {
+    0%, 25% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50%, 75% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animated-text {
+    position: relative;
+    height: 1.5em; /* Set the height of one line of text */
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.animated-item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.animated-item:nth-child(1) {
+    animation: slide-up 4s linear infinite;
+}
+
+.animated-item:nth-child(2) {
+    animation: slide-up-2 4s linear infinite;
+}
+
+@keyframes slide-up {
+    0%, 50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50%, 100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes slide-up-2 {
+    0%, 50% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    50%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.subtitle {
+    display: block;
+    height: 1.3em; /* Set fixed height equal to the font size of the text */
+    line-height: 1.3em; /* Align text vertically within the container */
+    overflow: hidden; /* Prevent any overflow from altering the layout */
+}
+
+#typewriter-text {
+    font-size: 1.2em;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    display: inline-block;
+    border-right: 2px solid #111827; /* Simulate the cursor */
+    animation: blink-cursor 0.7s step-end infinite; /* Cursor blinking animation */
+}
+
+/* Blinking cursor effect */
+@keyframes blink-cursor {
+    from {
+        border-right-color: transparent;
+    }
+    to {
+        border-right-color: #111827;
+    }
+}
+
+
+/*            Experience Layout Card                 */
+/* Container for Experience Cards */
+.experience-container {
+    display: flex; /* Align cards in a row */
+    gap: 2rem; /* Space between cards */
+    flex-wrap: wrap; /* Wrap cards to the next line on smaller screens */
+    margin-top: 1rem;
+}
+
+/* Individual Experience Card */
+.experience-card {
+    flex: 1 1 calc(50% - 2rem); /* Responsive width: 50% minus gap */
+    background: var(--card-bg); /* Theme-aware background */
+    border: 1px solid var(--card-border); /* Theme-aware border */
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.experience-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Heading Styling */
+.experience-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+body.dark-mode .experience-card h3 {
+    color: var(--primary-color);
+}
+
+/* List Styling */
+.experience-card ul {
+    list-style-type: disc; /* Bulleted list */
+    margin-top: 0.5rem;
+    margin-left: 1.5rem; /* Indent list */
+    padding: 0;
+    color: var(--text-color-light);
+}
+
+body.dark-mode .experience-card ul {
+    color: var(--text-color-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .experience-card {
+        flex: 1 1 100%; /* Full-width cards on smaller screens */
+    }
+}
+/*           Experience Card End                    */
+
+
+
+/* Skills Card */
+.skills-card {
+    background: var(--card-bg); /* Theme-aware background */
+    border: 1px solid var(--card-border); /* Theme-aware border */
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth transitions */
+}
+
+/* Skills Row */
+.skills-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.skills-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .skills-row h3 {
+    color: var(--text-color-dark);
+}
+
+/* Skills Icons Container */
+.skills-icons {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping when the container width is exceeded */
+    gap: 10px; /* Space between each icon */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Vertically center the icons */
+    padding: 10px 0; /* Add padding for better spacing */
+    width: 100%; /* Ensure it takes the full container width */
+}
+
+/* Individual Skill Items */
+.skills-icons img {
+    width: 50px; /* Set consistent width for icons */
+    height: 50px; /* Set consistent height for icons */
+    object-fit: contain; /* Ensure the icons maintain aspect ratio */
+}
+
+/* Skills Row */
+.skills-row {
+    display: flex;
+    flex-direction: row; /* Keep the title and icons in one row */
+    align-items: center; /* Vertically align items */
+    gap: 15px; /* Space between the title and icons */
+}
+
+/* Skills Row Title */
+.skills-row h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    flex-shrink: 0; /* Prevent the title from shrinking */
+    width: auto;
+}
+
+.skills-icons::-webkit-scrollbar {
+    height: 6px; /* Customize scrollbar height */
+}
+
+.skills-icons::-webkit-scrollbar-thumb {
+    background: var(--primary-color); /* Theme-aware scrollbar color */
+    border-radius: 4px;
+}
+
+.skills-icons::-webkit-scrollbar-track {
+    background: var(--card-bg-light); /* Subtle scrollbar track */
+}
+
+/* Individual Skill Items */
+.skills-icons i {
+    font-size: 1.5rem; /* Icon size */
+    color: var(--primary-color); /* Theme-aware icon color */
+    display: flex;
+    align-items: center;
+}
+
+.skills-icons span {
+    font-size: 1rem;
+    color: var(--text-color-light); /* Theme-aware text color */
+    margin-left: 0.5rem; /* Space between icon and text */
+    white-space: nowrap; /* Prevent wrapping of skill names */
+}
+
+body.dark-mode .skills-icons span {
+    color: var(--text-color-dark);
+}
+
+/* Hover Effect */
+.skills-icons i:hover,
+.skills-icons span:hover {
+    color: var(--highlight-color); /* Highlight color on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-row {
+        flex-wrap: wrap; /* Allow wrapping of content */
+    }
+
+    .skills-row h3 {
+        width: 100%; /* Title takes up full width in mobile view */
+        text-align: left; /* Align the title to the left */
+        margin-bottom: 10px;
+    }
+
+    .skills-icons {
+        justify-content: flex-start; /* Align icons to the left */
+    }
+}
+
+
+
+/*                      Testing Code                     */
+
+@media (max-width: 768px) {
+    /* General Reset for Mobile */
+    body, html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    * {
+        box-sizing: border-box; /* Consistent box model */
+    }
+
+    /* Ensure consistent width for all sections */
+    section, header {
+        width: 100%; /* Increased width for all sections */
+        max-width: 100vw; /* Prevent overflow */
+        margin: 0 auto; /* Center align sections */
+    }
+
+    /* Navbar adjustments */
+    nav {
+        width: 100%; /* Navbar spans full width */
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Align menu toggle to the right */
+    }
+
+    #menu-toggle {
+        left: 0;
+        position: relative;
+        display: block; /* Only show hamburger on mobile */
+        font-size: 1.5rem;
+        color: #f3f4f6;
+        background: none;
+        border: none;
+        cursor: pointer;
+        resize: both;
+    }
+
+    .nav-links {
+        width: 40%;
+        left: 2%;
+        /* top: 80%; */
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start; /* Align links to the left */
+        display: none; /* Hidden by default */
+        background: #131c2c;
+    }
+
+    .nav-links.visible {
+        display: flex; /* Show links when visible class is added */
+    }
+
+    .nav-links a {
+        padding: 10px 15px; /* Adjust padding for better spacing */
+    }
+
+    /* Cards Adjustments */
+    .projects-container, .experience-container, .skills-card {
+        width: 100%; /* Increased width for cards */
+        margin: 0 auto; /* Center align */
+    }
+
+    .project-card, .experience-card {
+        width: 100%; /* Make cards take full width */
+        border-radius: 10px; /* Consistent border radius */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    /* Skill Section Adjustments */
+
+    .skills-row h3 {
+        width: 100%; /* Title takes up full width in mobile view */
+        text-align: left; /* Align the title to the left */
+        margin-bottom: 10px;
+    }
+
+    .skills-row {
+        flex-wrap: wrap; /* Enable wrapping */
+        justify-content: center; /* Center align skills */
+        gap: 15px; /* Space between items */
+    }
+
+    .skills-icons {
+        flex-wrap: wrap; /* Ensure skills are on multiple lines */
+        justify-content: flex-start; /* Flex Start align icons */
+        gap: 10px; /* Adjust gap between icons */
+        overflow: visible; /* Prevent scrolling */
+    }
+
+    .skills-icons img {
+        width: 50px; /* Adjust size for mobile */
+        height: 50px;
+    }
+
+    /* Fix White Line in Dark Mode */
+    body.dark-mode {
+        margin: 0;
+        padding: 0;
+        background-color: #0e1115; /* Match background color */
+    }
+
+    .theme-menu-item {
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .brand-name {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.5rem;
+        color: #f3f4f6;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .theme-button {
+        position: relative;
+        margin-left: auto;
+        font-size: 1.5em;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.contact-footer .contact-details {
+    text-align: center;
+}
+
+.contact-footer .contact-items {
+    display: flex; /* Flexbox for side-by-side layout */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 30px; /* Space between each icon-text pair */
+    flex-wrap: wrap; /* Allow wrapping if the content overflows */
+}
+
+.contact-footer .contact-item {
+    display: flex; /* Align icon and text in a single row */
+    align-items: center; /* Vertical alignment */
+    gap: 8px; /* Space between icon and text */
+}
+
+.contact-footer i {
+    font-size: 20px; /* Adjust icon size */
+    color: var(--primary-color); /* Icon color */
+}
+
+.contact-footer a,
+.contact-footer span {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.contact-footer a:hover {
+    text-decoration: underline;
+}
