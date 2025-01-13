@@ -18,6 +18,13 @@ body.dark-mode {
     --text-color: #e2e8f0; /* Soft white */
 }
 
+.centered-justified {
+    margin: 0 auto; /* Centers the block horizontally */
+    text-align: justify; /* Justifies the text */
+    /*max-width: 100px; /* Optional: Limits the width of the text for readability */
+    line-height: 1.6; /* Optional: Improves text readability */
+}
+
 body, html {
     margin: 0;
     padding: 0;
