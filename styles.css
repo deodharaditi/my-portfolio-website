@@ -881,6 +881,10 @@ body.dark-mode .skills-icons span {
         margin: 0 auto; /* Center align sections */
     }
 
+    header{
+        margin-top: 25px;
+    }
+
     /* Navbar adjustments */
     nav {
         width: 100%; /* Navbar spans full width */
